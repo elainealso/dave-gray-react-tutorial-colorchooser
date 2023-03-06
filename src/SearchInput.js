@@ -4,11 +4,12 @@ const SearchInput = ({
   colorValue,
   setColorValue,
   setHexValue,
-  isDarkText,
+  // isDarkText,
   setIsDarkText,
 }) => {
   return (
     <form onSubmit={(e) => e.preventDefault()}>
+      {/* we'll handle the submition with an anonymous function that receives an event object */}
       <label>Add Color Name:</label>
       <input
         autoFocus
@@ -21,7 +22,8 @@ const SearchInput = ({
           setHexValue(colorNames(e.target.value));
         }}
       />
-      <button type="button" onClick={() => setIsDarkText(!isDarkText)}>
+      {/* <button type="button" onClick={() => setIsDarkText(!isDarkText)}> */}
+      <button type="button" onClick={() => setIsDarkText((prev)=>!prev)}>
         Toggle Text Color
       </button>
     </form>
